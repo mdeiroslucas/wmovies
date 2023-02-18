@@ -1,9 +1,10 @@
 import { useState } from 'react'
+import RoutesApp from './routes';
 
 function App() {
   return (
     <div className="App">
-      <h1>TESTe 2</h1>
+       <RoutesApp/>
     </div>
   )
 }
