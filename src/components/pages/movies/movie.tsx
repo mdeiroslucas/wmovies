@@ -35,6 +35,22 @@ function Movies () {
     }
   }, [navigate, id]);
 
+  function saveMovie(){
+    const myList: string | null = localStorage.getItem('@wmovies');
+    let savedMovies = JSON.parse(myList || "[]");
+
+    const hasMovie = savedMovies.some( (movieSaved: Movie) => movieSaved!.id === movieSelect!.id);
+
+    if (hasMovie) {
+      alert("You've already added this movie to the list.");
+      return;
+    }
+
+    savedMovies.push(movieSelect);
+    localStorage.setItem('@wmovies', JSON.stringify(savedMovies));
+    alert('Movie has been saved');
+  }
+
   if(loading) {
     return (
       <div className="loading">
@@ -54,7 +70,7 @@ function Movies () {
           <strong>Grade: {movieSelect!.vote_average} / 10</strong>
 
           <div className="buttons">
-            <button>Save</button>
+            <button onClick={saveMovie}>Save</button>
             <button>
               <a target='blank' rel='external' href={`https://www.youtube.com/results?search_query=${movieSelect!.title} Trailer`}>Trailer</a>
 
