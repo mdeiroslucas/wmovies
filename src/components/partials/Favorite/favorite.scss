@@ -1,0 +1,40 @@
+.my-movies { 
+  margin-top: 1.8em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    margin-bottom: 1em;
+  }
+
+  span {
+    font-size: 1.2rem;
+  }
+
+  ul {
+    width: 45em;
+
+    li {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1em;
+    }
+  }
+
+  &--details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      color: #116feb;
+      margin-right: 1em;
+    }
+  }
+
+  
+}
