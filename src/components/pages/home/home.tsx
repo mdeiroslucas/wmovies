@@ -8,7 +8,7 @@ import './home.scss';
 
 function home () {
   const [nowMovies, setNowMovies] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading]     = useState(true);
 
   useEffect(() =>{
 
@@ -53,7 +53,7 @@ function home () {
             <article key={movie.id}>
               <strong>{movie.title}</strong>
               <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
-              <Link to={`/filme/${movie.id}`}>Acessar</Link>
+              <Link to={`/movie/${movie.id}`}>Acessar</Link>
             </article>
           )
         })}
