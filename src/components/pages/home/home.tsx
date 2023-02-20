@@ -1,28 +1,53 @@
 import { useEffect, useState } from "react";
 import api from '../../../services/api'
+import { Movie } from "../../../model/movie";
+import { Link } from 'react-router-dom';
+import './home.scss';
+
+
 
 function home () {
-  const [moveis, setMovies] = useState([]);
+  const [nowMovies, setNowMovies] = useState([]);
 
   useEffect(() =>{
 
     async function loadMovies(){
-      const response = await api.get("movie/now_playing", {
+      // const response = 
+      await api.get("movie/now_playing", {
         params: {
           api_key: '3e5e48c2fadb1d201ea994c146ebff5d',
           language: "pt-br",
           page: 1,
         }
-      });
+      }).then(res => {
+        setNowMovies(res.data.results)
+      })
+        
+      
+      
+      // setNowMovies(response.data.result);
 
-      console.log(response.data.results);
+      // console.log(response.data.results.slice(0, 10));
+
+      
     }
 
     loadMovies();
   }, []);
+
   return (
-    <div>
-      <h1>Bem vindo a home</h1>
+    <div className="container">
+      <div className="movie-list">
+        {nowMovies.map((movie: Movie) => {
+          return (
+            <article key={movie.id}>
+              <strong>{movie.title}</strong>
+              <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
+              <Link to={`/filme/${movie.id}`}>Acessar</Link>
+            </article>
+          )
+        })}
+      </div>
     </div>
   )
 }
