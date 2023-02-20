@@ -3,6 +3,7 @@ import { useParams, useNavigate} from 'react-router-dom';
 import api from '../../../services/api'
 import { Movie } from "../../../model/movie";
 import './movie.scss';
+import { toast } from 'react-toastify';
 
 function Movies () {
   const { id } = useParams();
@@ -42,13 +43,14 @@ function Movies () {
     const hasMovie = savedMovies.some( (movieSaved: Movie) => movieSaved!.id === movieSelect!.id);
 
     if (hasMovie) {
-      alert("You've already added this movie to the list.");
+      toast.warning("You've already added this movie to the list.");
+
       return;
     }
 
     savedMovies.push(movieSelect);
     localStorage.setItem('@wmovies', JSON.stringify(savedMovies));
-    alert('Movie has been saved');
+    toast.success("Movie added successfully");
   }
 
   if(loading) {

@@ -2,6 +2,7 @@ import { useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import { Movie } from '../../../model/movie';
 import './favorite.scss';
+import { toast } from 'react-toastify';
 
 
 function Favorite () {
@@ -21,6 +22,7 @@ function Favorite () {
 
     setFavoriteMovies(filterMovie);
     localStorage.setItem('@wmovies', JSON.stringify(filterMovie));
+    toast.success('Movie deleted');
   }
 
   return (
