@@ -8,6 +8,7 @@ import './home.scss';
 
 function home () {
   const [nowMovies, setNowMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() =>{
 
@@ -21,6 +22,7 @@ function home () {
         }
       }).then(res => {
         setNowMovies(res.data.results)
+        setLoading(false);
       })
         
       
@@ -34,6 +36,14 @@ function home () {
 
     loadMovies();
   }, []);
+
+  if(loading){
+    return (
+     <div className='loading'>
+      <h2>Loading movies...</h2>
+     </div>
+    )
+  }
 
   return (
     <div className="container">

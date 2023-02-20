@@ -1,0 +1,20 @@
+.not-found {
+  background-color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    font-size: 7.5rem;
+  }
+
+  a {
+    text-decoration: none;
+    background-color: #116feb;
+    color: white;
+    padding: 0.8em;
+    margin-top: 1.2em;
+  }
+}
