@@ -14,9 +14,20 @@ function Favorite () {
 
   })
 
+  function deleteMovie(id: string){
+    let filterMovie = favoriteMovies.filter((movie) => {
+      return (movie.id !== id)
+    })
+
+    setFavoriteMovies(filterMovie);
+    localStorage.setItem('@wmovies', JSON.stringify(filterMovie));
+  }
+
   return (
     <div className="my-movies">
-      <h1>Tela Favorita</h1>
+      <h1>My Favorites</h1>
+
+      {favoriteMovies.length === 0 && <span>You don't have favorite movies</span> };
 
       <ul>
         {favoriteMovies.map((favoriteMovie: Movie) => {
@@ -25,7 +36,7 @@ function Favorite () {
               <span>{favoriteMovie.title}</span>
               <div className='my-movies--details'>
                 <Link to={`/movie/${favoriteMovie.id}`}>Details </Link>
-                <button>Exclude</button>
+                <button onClick={ () => deleteMovie(favoriteMovie.id)}>Exclude</button>
               </div>
             </li>
           )
