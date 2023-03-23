@@ -11,7 +11,7 @@ export default function Header(){
       <div className='search'> 
         <input type="text" placeholder='Search...' onChange={e => setQuery(e.target.value)} />
       </div>
-      <Link className='favorite' to='/favorite'>My movies</Link>
+      <Link className='favorite' to='/favorite'>MyMovies</Link>
     </header>
   )
 }

@@ -8,8 +8,8 @@ import './home.scss';
 
 
 function home () {
-  const [nowMovies, setNowMovies] = useState([]);
-  const [loading, setLoading]     = useState(true);
+  const [nowMovies, setNowMovies]= useState([]);
+  const [loading, setLoading]= useState(true);
 
   useEffect(() =>{
 
@@ -25,14 +25,6 @@ function home () {
         setNowMovies(res.data.results)
         setLoading(false);
       })
-        
-      
-      
-      // setNowMovies(response.data.result);
-
-      // console.log(response.data.results.slice(0, 10));
-
-      
     }
 
     loadMovies();
@@ -52,8 +44,8 @@ function home () {
         {nowMovies.map((movie: Movie) => {
           return (
             <article key={movie.id} className="container__movie">
-              <strong className="container__movie--title">{movie.title}</strong>
               <img className="container__movie--image"src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
+              <h2 className="container__movie--title">{movie.title}</h2>
               <Link to={`/movie/${movie.id}`}>Acessar</Link>
             </article>
           )
