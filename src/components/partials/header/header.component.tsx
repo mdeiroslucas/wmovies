@@ -1,16 +1,17 @@
+import { useState } from 'react';
 import './header.component.scss';
 import { Link } from 'react-router-dom';
 
-function Header(){
+export default function Header(){
+  const [query, setQuery] = useState("");
+
   return (
     <header>
       <Link className='logo' to="/"> WMovies </Link>
       <div className='search'> 
-        <input type="text" placeholder='Search...' />
+        <input type="text" placeholder='Search...' onChange={e => setQuery(e.target.value)} />
       </div>
       <Link className='favorite' to='/favorite'>My movies</Link>
     </header>
   )
 }
-
-export default Header;

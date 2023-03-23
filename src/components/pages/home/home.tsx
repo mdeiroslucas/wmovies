@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import api from '../../../services/api'
 import { Movie } from "../../../model/movie";
 import { Link } from 'react-router-dom';
+
 import './home.scss';
 
 
@@ -20,7 +21,7 @@ function home () {
           language: "pt-br",
           page: 1,
         }
-      }).then(res => {
+      }).then(res => { 
         setNowMovies(res.data.results)
         setLoading(false);
       })
