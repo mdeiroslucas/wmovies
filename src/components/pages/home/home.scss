@@ -25,11 +25,17 @@
     .container__movie{
       display: flex;
       flex-direction: column;
+      // height: 300px; /* adjust as needed */
+      // width: 300px; /* adjust as needed */
+      // border: 1px solid #ccc;
+      // padding: 10px;
 
       &--title{
-        background-color: white;
-        
-        color: white;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* limit to 2 lines */
+        -webkit-box-orient: vertical;
       }
     }
   }
@@ -42,11 +48,12 @@
 
   img {
     width: 56em;
+    height: 100%;
     max-width: 100%;
     max-height: 21em;
     object-fit: cover;
     display: block;
-    border-radius: 9px 8px 0 0;
+    border-radius: 8px 8px 0 0;
   }
 
   a {

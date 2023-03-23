@@ -7,7 +7,9 @@ export default function Header(){
 
   return (
     <header>
-      <Link className='logo' to="/"> WMovies </Link>
+      <Link className='logo' to="/">
+        <span>W</span>Movies
+      </Link>
       <div className='search'> 
         <input type="text" placeholder='Search...' onChange={e => setQuery(e.target.value)} />
       </div>
