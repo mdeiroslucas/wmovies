@@ -51,9 +51,9 @@ function home () {
       <div className="movie-list">
         {nowMovies.map((movie: Movie) => {
           return (
-            <article key={movie.id}>
-              <strong>{movie.title}</strong>
-              <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
+            <article key={movie.id} className="container__movie">
+              <strong className="container__movie--title">{movie.title}</strong>
+              <img className="container__movie--image"src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
               <Link to={`/movie/${movie.id}`}>Acessar</Link>
             </article>
           )
