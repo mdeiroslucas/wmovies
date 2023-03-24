@@ -10,6 +10,7 @@ import './home.scss';
 function home () {
   const [nowMovies, setNowMovies]= useState([]);
   const [loading, setLoading]= useState(true);
+  
 
   useEffect(() =>{
 
