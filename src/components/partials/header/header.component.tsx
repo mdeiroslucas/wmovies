@@ -14,8 +14,9 @@ export default function Header(){
     
     if (!search) return;
 
-    navigate(`/search?q=${search}`)
+    navigate(`/search/:${search}`)
     setSearch('');
+    
     // await api.get("movie/now_playing", {
     //   params: {
     //     api_key: '3e5e48c2fadb1d201ea994c146ebff5d',

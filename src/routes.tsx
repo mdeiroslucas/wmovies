@@ -5,6 +5,7 @@ import Movies from  './components/pages/movies/movie';
 import Header from  './components/partials/header/header.component';
 import Error  from  './components/pages/Error/error';
 import Favorite from "./components/partials/Favorite/favorite";
+import Search from './components/pages/search/search';
 
 function RoutesApp() {
   return (
@@ -14,6 +15,7 @@ function RoutesApp() {
           <Route path="/" element={<Home />} />
           <Route path="/movie/:id" element={<Movies />} />
           <Route path="/favorite" element={<Favorite />} />
+          <Route path="/search" element={<Search />}/>
 
 
           <Route path='*' element={<Error />} />
