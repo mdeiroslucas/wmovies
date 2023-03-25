@@ -10,15 +10,15 @@ function Search(){
 
   useEffect (() => {
     async function loadMovie() {
-     await api.get('/search/movie', {
+     await api.get('/search/keyword', {
       params:{
-        api_Key:'3e5e48c2fadb1d201ea994c146ebff5d',
-        language: "pt-br",
+        api_key:'3e5e48c2fadb1d201ea994c146ebff5d',
+        // language: "pt-br",
         query: `${cleanedName}`, 
         page: 1,
-        include_adult: true,
       }
      }).then((res) => {
+      console.log('leu aqui')
       setSearhTerm(res.data)
       console.log(res.data);
      }).catch (() => {
@@ -26,12 +26,8 @@ function Search(){
       return
     })
     }
-
+    
     loadMovie();
-
-    return () => {
-      console.log('vendo se foi')
-    }
 
   }, [Navigate, name]);
 
@@ -42,6 +38,7 @@ function Search(){
 }
 
 
-
+    //https://api.themoviedb.org/3/search/keyword?api_Key=3e5e48c2fadb1d201ea994c146ebff5d&query=sex&page=1
+    //https://api.themoviedb.org/3/search/keyword?api_key=3e5e48c2fadb1d201ea994c146ebff5d&query=sex&page=1
 
 export default Search;
