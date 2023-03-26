@@ -8,6 +8,12 @@
 
   h1 {
     margin: 1em 0;
+    color: white;
+  }
+
+  .grade{
+    color: #32cf06;
+    margin-top: 2em;
   }
 
   img {
@@ -19,38 +25,58 @@
   }
 
   h3 {
-    margin-top: 1em;
+    margin: 1.5em 0 0.5em 0;
+    color: #32cf06
   }
 
   span {
     margin: 0.4em 0;
+    color: white;
   }
 
   .buttons {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-right: 12px;
     margin-top: 14px;
-    margin-left: 0;
     font-size: 1rem;
-    border: 0;
     outline: none;
     padding: 0.8em;
-    
 
+    .save {
+      padding: 1em;
+      border-radius: 1rem 0 0 1rem;
+      border: none;
+      
+    }
+    
+    .trailer {
+      padding: 1em;
+      border-radius: 0 1em 1em 0;
+      border: none;
+    }
+    
     button {
       transition: all 0.3s;
       cursor: pointer;
-      &:Hover {
-        background-color: brown;
-        color: white;
+      margin-left: 0.3em;
+      width: 100px;
+      // &:Hover {
+      //   background-color: #32cf06;
+      //   color: white;
+      // }
+      a {
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
       }
-    }
-    a {
-      text-decoration: none;
-      color: black;
-      cursor: pointer;
       &:Hover {
+        background-color: #32cf06;
         color: white;
+        a {
+          color: white;
+        }
       }
     }
   }

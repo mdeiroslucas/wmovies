@@ -25,6 +25,7 @@ function home () {
       }).then(res => { 
         setNowMovies(res.data.results)
         setLoading(false);
+        console.log(res.data.results);
       })
     }
 
@@ -46,7 +47,7 @@ function home () {
           return (
             <article key={movie.id} className="container__movie">
               <img className="container__movie--image"src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
-              <h2 className="container__movie--title">{movie.title}</h2>
+              <span><h2 className="container__movie--title">{movie.title}</h2></span>
               <Link to={`/movie/${movie.id}`}>Acessar</Link>
             </article>
           )
