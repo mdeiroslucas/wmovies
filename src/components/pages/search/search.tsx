@@ -18,7 +18,7 @@ function Search(){
         language: "pt-br",
         query: `${cleanedName}`, 
         page: 1,
-        include_adult: true,
+        include_adult: false,
       }
      }).then((res) => {
       setSearhTerm(res.data.results)
@@ -50,9 +50,5 @@ function Search(){
     </div>
   )
 }
-
-
-    //https://api.themoviedb.org/3/search/keyword?api_Key=3e5e48c2fadb1d201ea994c146ebff5d&query=sex&page=1
-    //https://api.themoviedb.org/3/search/keyword?api_key=3e5e48c2fadb1d201ea994c146ebff5d&query=sex&page=1
 
 export default Search;
