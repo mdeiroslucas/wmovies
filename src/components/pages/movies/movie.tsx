@@ -71,7 +71,7 @@ function Movies () {
 
       <strong className='grade'>Grade: {movieSelect!.vote_average} / 10</strong>
 
-      <div className="buttons">
+      <div className="button">
         <button className='save' onClick={saveMovie}>Save</button>
         <button className='trailer'>
           <a target='blank' rel='external' href={`https://www.youtube.com/results?search_query=${movieSelect!.title} Trailer`}>Trailer</a>

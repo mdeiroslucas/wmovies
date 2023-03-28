@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import api from '../../../services/api'
 import { Movie } from "../../../model/movie";
 import { Link } from 'react-router-dom';
+//  <reference types="vite/client" />
+import axios from 'axios';
 
 import './home.scss';
 
@@ -10,12 +12,10 @@ import './home.scss';
 function home () {
   const [nowMovies, setNowMovies]= useState([]);
   const [loading, setLoading]= useState(true);
-  
 
   useEffect(() =>{
 
     async function loadMovies(){
-      // const response = 
       await api.get("movie/now_playing", {
         params: {
           api_key: '3e5e48c2fadb1d201ea994c146ebff5d',

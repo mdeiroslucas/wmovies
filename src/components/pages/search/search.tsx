@@ -9,16 +9,17 @@ function Search(){
   const {name} = useParams();
   const cleanedName = name?.substring(1);
   const navigate = useNavigate();
+  const { VITE_API_KEY } = import.meta.env;
 
   useEffect (() => {
     async function loadMovie() {
      await api.get('/search/movie', {
       params:{
-        api_key:'3e5e48c2fadb1d201ea994c146ebff5d',
+        api_key: '3e5e48c2fadb1d201ea994c146ebff5d',
         language: "pt-br",
         query: `${cleanedName}`, 
         page: 1,
-        include_adult: false,
+        include_adult: true,
       }
      }).then((res) => {
       setSearhTerm(res.data.results)

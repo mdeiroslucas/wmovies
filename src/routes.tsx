@@ -17,7 +17,6 @@ function RoutesApp() {
           <Route path="/favorite" element={<Favorite />} />
           <Route path="/search/:name" element={<Search />}/>
 
-
           <Route path='*' element={<Error />} />
         </Routes>
     </BrowserRouter>
